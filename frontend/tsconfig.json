@@ -14,13 +14,16 @@
       "ESNext",
       "DOM"
     ],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "allowJs": true,
+    "outDir": "frontend/src/assets"
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/**/*.js"
   ],
   "references": [
     {

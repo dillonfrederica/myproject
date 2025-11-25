@@ -1,21 +1,24 @@
 <script lang="ts" setup>
-import HelloWorld from './components/HelloWorld.vue'</script>
+import { initGeetest4 } from './assets/gt4.js'
+
+const testBtn = async () => {
+  try {
+    const i = await initGeetest4({
+      captchaId: "dd79f9ac1a3c66fc21e6df7cecab4d40",
+      product: "bind",
+      riskType: "slide",
+    })
+    console.log(i);
+  } catch (e) {
+    console.error(e)
+  }
+}
+</script>
 
 <template>
-  <img id="logo" alt="Wails logo" src="./assets/images/logo-universal.png"/>
-  <HelloWorld/>
+  <div style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <button @click="testBtn">test</button>
+  </div>
 </template>
 
-<style>
-#logo {
-  display: block;
-  width: 50%;
-  height: 50%;
-  margin: auto;
-  padding: 10% 0 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-origin: content-box;
-}
-</style>
+<style></style>
