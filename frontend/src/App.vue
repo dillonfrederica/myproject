@@ -13,11 +13,26 @@ const testBtn = async () => {
     console.error(e)
   }
 }
+
+const testBtn2 = (url: string) => {
+  var head = document.getElementsByTagName("head")[0];
+  var script = document.createElement("script");
+  script.charset = "UTF-8";
+  script.async = true;
+  script.onerror = function () {
+    alert("load error");
+  };
+  script.onload = function () {
+    alert("load done");
+  };
+  script.src = url;
+  head.appendChild(script);
+};
 </script>
 
 <template>
   <div style="height: 100vh; display: flex; justify-content: center; align-items: center;">
-    <button @click="testBtn">test</button>
+    <button @click="testBtn2('https://pss.bdstatic.com/static/superman/js/components/tips-e2ceadd14d.js')">test</button>
   </div>
 </template>
 
